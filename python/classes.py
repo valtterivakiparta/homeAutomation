@@ -13,8 +13,8 @@ class sensor:
     def connectToDatabase(self):
         try:
             conn = mariadb.connect(
-                user="valtteri",
-                password="MiinuspallO03",
+                user="username",
+                password="passwd",
                 host="localhost",
                 port=3308,
                 database=""

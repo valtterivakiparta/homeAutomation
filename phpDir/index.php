@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "valtteri";
-$password = "MiinuspallO03";
+$username = "user";
+$password = "passwd";
 
 try {
   $conn = new PDO("mysql:host=$servername;", $username, $password);
@@ -15,19 +15,4 @@ try {
 } catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
 }
-
-/*
-$servername = "localhost";
-$username = "valtteri";
-$password = "MiinuspallO03";
-
-// Create connection
-$conn = new PDO($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
-*/
 ?>
