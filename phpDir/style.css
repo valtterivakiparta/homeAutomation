@@ -1,0 +1,42 @@
+
+
+.container {
+    padding: 5px 5px;
+    border: 10px solid #000000;
+    width:1450px;
+}
+
+.MKM {
+    display: inline-block;
+   width: 13em;
+   text-align: center;
+    border: 3px solid #000000;
+}
+
+.Max-Avg-Min {
+    padding: 0px 0px;
+    border: 3px solid #000000;
+    width: 13em;
+}
+
+
+ .log {
+    width:44vh;
+    height:3vh;
+
+    border:3px solid #000000;
+    position:absolute; right:5px; top:40px;
+    text-align: "center"; 
+}
+
+.log-t{
+    position:absolute; top:-22px; right:-3px; width:411px; height:25px;
+    border:3px solid #000000;
+    text-align: center;
+    padding: 5px;
+}
+
+.log-text{
+    border:3px solid #000000;
+    position:absolute; top:25px; right:3px; width:411px; height:856px;
+}

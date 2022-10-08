@@ -2,6 +2,8 @@ import time
 import glob
 import mariadb
 import sys
+from datetime import datetime
+
 
 class sensor:
     #Määritetään tiedostopolut josta lämpötilat haetaan
@@ -9,15 +11,17 @@ class sensor:
     deviceFolder = glob.glob(baseDir + '28*')[0]
     deviceFile = deviceFolder + '/w1_slave'
 
+
+
     # Muodostetaan yhteys tietokantaan
     def connectToDatabase(self):
         try:
             conn = mariadb.connect(
-                user="username",
-                password="passwd",
+                user="valtteri",
+                password="MiinuspallO03",
                 host="localhost",
-                port=3308,
-                database=""
+                port=3306,
+                database="homeAutomation"
 
             )
         except mariadb.Error as e:
@@ -26,19 +30,22 @@ class sensor:
 
         # Get Cursor
         cur = conn.cursor()
-        self.insertIntoTable(cur)
+        self.insertIntoTable(cur, conn)
+        
             
     #Funktio jonka avulla lisätään informaatio tietokantaan.
-    def insertIntoTable(self, cur):
-        cur.execute("")
+    def insertIntoTable(self, cur, conn):
+        numberF = format(self.readTemperature(), '.1f')
+        data = [numberF, datetime.now()]
+        cur.execute("INSERT INTO tempSensor (mittausarvo,aikaleima) VALUES (?,?)",data)
+        conn.commit()
 
-    #luetaan kaikki data jota löytyy tiedostopolkujen päästä. 
     def readRawData(self):
         r = open(self.deviceFile, 'r')
         lines = r.readlines()
         r.close
         return lines
-    
+
     #Haetaan tarkka sijainti lämpötilasta.
     def readTemperature(self):
         lines = self.readRawData()
