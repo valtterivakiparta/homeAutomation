@@ -40,6 +40,7 @@ class sensor:
         cur.execute("INSERT INTO tempSensor (mittausarvo,aikaleima) VALUES (?,?)",data)
         conn.commit()
 
+    #Haetaan kaikki data mitä tiedoststa löytyy
     def readRawData(self):
         r = open(self.deviceFile, 'r')
         lines = r.readlines()
