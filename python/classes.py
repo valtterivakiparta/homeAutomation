@@ -17,11 +17,11 @@ class sensor:
     def connectToDatabase(self):
         try:
             conn = mariadb.connect(
-                user="valtteri",
-                password="MiinuspallO03",
-                host="localhost",
+                user="",
+                password="",
+                host="",
                 port=3306,
-                database="homeAutomation"
+                database=""
 
             )
         except mariadb.Error as e:
