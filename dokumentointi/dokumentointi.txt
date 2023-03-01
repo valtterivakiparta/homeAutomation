@@ -18,7 +18,7 @@ Koti automaatio projektin dokumentointi
 
 3.0 - Käyttöjärjestelmä asennus
          2.1 - Yleinen tieto
-                Käyttöjärjestelmänä toimii Raspberryn oma raspbian lite 64bittinen ¨
+                Käyttöjärjestelmänä toimii Raspberryn oma raspbian lite 64bittinen
                 versio ilman graafistaköyttöliittymää. 
         2.2 - Asennuket valmistelut
                 Macbookille asennetaan rasbianin oma työkalu nimeltään
